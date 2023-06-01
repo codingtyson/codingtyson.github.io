@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <style>
+      @font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+      * {
+        box-sizing: border-box;
+        font-family: 'SUITE-Regular';
+        color: darkolivegreen;
+
+      }
+      .header {
+        text-align: center;
+        margin: 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+      }
+
+      .box {
+        width: 400px;
+        min-height: 500px;
+        border: 3px solid goldenrod;
+        margin: 10px;
+        border-radius: 10px;
+   
+      }
+      p {
+        margin: 2px auto;
+        padding: 5px 20px;
+        border-radius: 10px;
+        width: 97%;
+        min-height: 50px;
+        overflow-wrap: break-word;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        }
+      .delete {
+    margin-left: auto;
+      }
+      #input {
+  border-radius: 10px;
+  border: 2px solid darkolivegreen;
+  padding: 10px;
+  width: 200px;
+}
+.span-box {
+  display:flex;
+  justify-content: space-evenly;
+  font-weight: bold;
+  
+
+}
+.span-box span {
+  display:inline-block;
+  margin-right: 30px;
+  color: deeppink;
+  
+  
+}
+button {
+  border-radius: 10px;
+  border: 2px solid  darkolivegreen;
+  padding: 10px 20px;
+  background-color: white;
+  color:  darkolivegreen;
+}
+
+::placeholder {
+  color: gray;
+}
+    </style>
+  </head>
+  <body>
+    <section class="header">
+      <h1>TO DO LIST</h1>
+      <input id="input" placeholder="Todo" />
+      <button>Click</button=>
+         
+        
+      <!-- <button onclick="callback()">Click</button> -->
+    </section>
+    <div class="span-box">
+      <span>TO DO</span>
+      <span>DOING</span>
+      <span>DONE</span>
+    </div> 
+    <section class="container">
+  
+            <div class="box todo" category="todo"></div>
+      <div class="box doing" category="doing"></div>
+      <div class="box done" category="done"></div>
+    </section>
+    <script src="todo.js"></script>
+    <!-- <script>
+      let todos = JSON.parse(localStorage.getItem("todos"));
+      if (todos != null) {
+        display(todos, document.querySelector(".box1"));
+      } else {
+        todos = [];
+      }
+
+      function callback() {
+        if (document.querySelector("#input").value.length === 0) {
+          alert("할일을 입력해주세요");
+          return;
+        }
+        todos.push(document.querySelector("#input").value);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        display(todos, document.querySelector(".box1"));
+        document.querySelector("#input").value = "";
+      }
+      function display(x, y) {
+        y.innerHTML = "";
+        x.forEach((a) => {
+          const 할일 = document.createElement("p");
+          할일.textContent = a;
+          const random = colors[Math.floor(Math.random() * (18 - 1)) + 1];
+          console.log(random);
+          할일.style.backgroundColor = random;
+          y.appendChild(할일);
+        });
+      }
+
+      const boxes = document.querySelectorAll(".box");
+      const 드래그할일 = document.querySelector(".할일인데어떠카지?");
+
+      boxes.forEach(function (box) {
+        box.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+      });
+      box.addEventListener("dragleave", (e) => {});
+      box.addEventListener("drop", (e) => {
+        e.current
+      })
+    </script> -->
+  </body>
+</html>
+
+<!-- <input id="input" placeholder="todo list" />
+    <button onclick="callback()">click</button>
+    <p class="display"></p>
+    <script>
+      let todos = JSON.parse(localStorage.getItem("todos"));
+      if (todos != null) {
+        display(todos, document.querySelector(".display"));
+      } else {
+        todos = [];
+      }
+      function callback() {
+        if (document.querySelector("#input").value.length === 0) {
+          alert("할일을 입력해주세요");
+          return;
+        }
+        todos.push(document.querySelector("#input").value);
+        localStorage.setItem("todos", JSON.stringify(todos));
+        display(todos, document.querySelector(".display"));
+        document.querySelector("#input").value = "";
+      }
+      function display(array, parent) {
+        parent.innerHTML = "";
+        array.forEach((a) => {
+          const newTag = document.createElement("p");
+          newTag.textContent = a;
+          parent.appendChild(newTag);
+        });
+      }
+    </script>  -->
