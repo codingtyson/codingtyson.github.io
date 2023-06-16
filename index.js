@@ -38,7 +38,6 @@ document.querySelector("button").addEventListener("click", (e) => {
   todo객체.url = url;
   todo객체.color = 색추출기(colors);
   todo객체.id = new Date().getTime().toString();
-  todo객체.timestamp = new Date().getTime().toString();
 
   localStorage.setItem(todo객체.id, JSON.stringify(todo객체));
 
@@ -47,8 +46,7 @@ document.querySelector("button").addEventListener("click", (e) => {
     todo객체.content,
     todo객체.url,
     todo객체.id,
-    todo객체.color,
-    todo객체.timestamp
+    todo객체.color
   );
   document.querySelector(".todo").appendChild(newTag);
 
@@ -72,7 +70,7 @@ boxes.forEach((box, i) => {
   });
 });
 
-function createTag(title, content, url, key, color, timestamp) {
+function createTag(title, content, url, key, color) {
   const newTag = document.createElement("div");
   newTag.classList.add("tag");
 
@@ -97,10 +95,10 @@ function createTag(title, content, url, key, color, timestamp) {
   // timestamp.innerHTML = new Date(Number(todo.timestamp)).toLocaleString();
   // timestamp.classList.add("timestamp");
   // newTag.appendChild(timestamp);
-  const timestampTag = document.createElement("p");
-  timestampTag.innerHTML = new Date(Number(timestamp)).toLocaleString();
-  timestampTag.classList.add("timestamp");
-  newTag.appendChild(timestampTag);
+  const timestamp = document.createElement("p");
+  timestamp.innerHTML = new Date().toLocaleString();
+  timestamp.classList.add("timestamp");
+  newTag.appendChild(timestamp);
 
   newTag.style.backgroundColor = color;
 
@@ -135,8 +133,8 @@ for (let i = 0; i < localStorage.length; i++) {
     todo.content,
     todo.url,
     todo.id,
-    todo.color,
-    todo.timestamp
+    todo.color
+    // todo.timestamp
   );
 
   function getSortedDataByTime() {
@@ -160,8 +158,7 @@ for (let i = 0; i < localStorage.length; i++) {
         todo.content,
         todo.url,
         todo.id,
-        todo.color,
-        todo.timestamp
+        todo.color
       );
 
       document.querySelector(`.${todo.category}`).appendChild(newTag);
@@ -170,11 +167,10 @@ for (let i = 0; i < localStorage.length; i++) {
   }
 }
 displayData();
-
 const urlInput = document.querySelector("#inputUrl");
-
 urlInput.addEventListener("input", (e) => {
   const urlValue = e.target.value;
+
   if (!urlValue.startsWith("http://") && !urlValue.startsWith("https://")) {
     urlInput.value = "http://" + urlValue;
   }
