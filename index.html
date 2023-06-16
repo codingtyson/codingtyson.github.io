@@ -19,7 +19,14 @@
         color: darkolivegreen;
 
       }
+      .firstcontainer {
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .header {
+        align-items: center;
         text-align: center;
         margin: 20px;
       }
@@ -27,14 +34,17 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        /* position:relative; */
+  
       }
 
       .box {
-        width: 500px;
+        width: 300px;
         min-height: 500px;
         border: 3px solid goldenrod;
         margin: 10px;
         border-radius: 10px;
+        position: relative;
          }
       p {
         margin: 2px auto;
@@ -57,7 +67,7 @@
         border-radius: 10px;
         border: 2px solid darkolivegreen;
         padding: 10px;
-        width: 300px;
+        width: 500px;
         margin-bottom: 10px;
 }
 
@@ -66,17 +76,18 @@
 }
  
 .span-box {
+  width: 960px;
   display:flex;
-  justify-content: space-around;
+  justify-content: center;
   font-weight: bold;
-
 }
 .span-box span {
+  width: 300px;
+  text-align: center;
   display:inline-block;
   margin-right: 30px;
   color: deeppink;
-  
-  
+    
 }
 button {
   border-radius: 10px;
@@ -101,6 +112,7 @@ button {
     </style>
   </head>
   <body>
+    <div class="firstcontainer">
     <section class="header">
       <h1>TO DO LIST</h1>
       <input id="input1" placeholder="제목(20자내로 쓰세요)"/>
@@ -119,6 +131,7 @@ button {
       <div class="box doing" category="doing"></div>
       <div class="box done" category="done"></div>
     </section>
+    </div>
     <script src="투두완성본.js"></script>
   </body>
   </html>
