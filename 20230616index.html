@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <style>
+      @font-face {
+    font-family: 'SUITE-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+      * {
+        box-sizing: border-box;
+        font-family: 'SUITE-Regular';
+        color: darkolivegreen;
+
+      }
+      .firstcontainer {
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .header {
+        align-items: center;
+        text-align: center;
+        margin: 20px;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        /* position:relative; */
+  
+      }
+
+      .box {
+        width: 300px;
+        min-height: 500px;
+        border: 3px solid goldenrod;
+        margin: 10px;
+        border-radius: 10px;
+        position: relative;
+         }
+      p {
+        margin: 2px auto;
+        padding: 5px 20px;
+        border-radius: 10px;
+        width: 97%;
+        min-height: 50px;
+        overflow-wrap: break-word;
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        }
+      .delete {
+    margin-left: auto;
+      }
+      #input1,
+      #input,
+      #inputUrl {
+        display:block;
+        border-radius: 10px;
+        border: 2px solid darkolivegreen;
+        padding: 10px;
+        width: 500px;
+        margin-bottom: 10px;
+}
+
+#input {
+    height : 150px;
+}
+ 
+.span-box {
+  width: 960px;
+  display:flex;
+  justify-content: center;
+  font-weight: bold;
+}
+.span-box span {
+  width: 300px;
+  text-align: center;
+  display:inline-block;
+  margin-right: 30px;
+  color: deeppink;
+    
+}
+button {
+  border-radius: 10px;
+  border: 2px solid  darkolivegreen;
+  padding: 10px 20px;
+  background-color: white;
+  color:  darkolivegreen;
+}
+
+::placeholder {
+  color: gray;
+}
+.url {
+  text-decoration: none;
+
+}
+.tag {
+    border-radius: 10px;
+    width:98%;
+    margin:auto;
+}
+    </style>
+  </head>
+  <body>
+    <div class="firstcontainer">
+    <section class="header">
+      <h1>TO DO LIST</h1>
+      <input id="input1" placeholder="제목(20자내로 쓰세요)"/>
+      <input id="input" placeholder="할일(200자내로 쓰세요)" />
+         <input id="inputUrl" placeholder="URL"/>
+      <button>Click</button=>
+        <!-- <button onclick="callback()">Click</button> -->
+    </section>
+    <div class="span-box">
+      <span>TO DO</span>
+      <span>DOING</span>
+      <span>DONE</span>
+    </div> 
+    <section class="container">
+      <div class="box todo" category="todo"></div>
+      <div class="box doing" category="doing"></div>
+      <div class="box done" category="done"></div>
+    </section>
+    </div>
+    <script src="투두완성본.js"></script>
+  </body>
+  </html>
+  
