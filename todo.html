@@ -19,7 +19,14 @@
         color: darkolivegreen;
 
       }
+      .firstcontainer {
+
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+      }
       .header {
+        align-items: center;
         text-align: center;
         margin: 20px;
       }
@@ -27,16 +34,18 @@
         display: flex;
         justify-content: center;
         align-content: center;
+        /* position:relative; */
+  
       }
 
       .box {
-        width: 400px;
+        width: 300px;
         min-height: 500px;
         border: 3px solid goldenrod;
         margin: 10px;
         border-radius: 10px;
-   
-      }
+        position: relative;
+         }
       p {
         margin: 2px auto;
         padding: 5px 20px;
@@ -51,25 +60,34 @@
       .delete {
     margin-left: auto;
       }
-      #input {
-  border-radius: 10px;
-  border: 2px solid darkolivegreen;
-  padding: 10px;
-  width: 200px;
+      #input1,
+      #input,
+      #inputUrl {
+        display:block;
+        border-radius: 10px;
+        border: 2px solid darkolivegreen;
+        padding: 10px;
+        width: 500px;
+        margin-bottom: 10px;
 }
-.span-box {
-  display:flex;
-  justify-content: space-evenly;
-  font-weight: bold;
-  
 
+#input {
+    height : 150px;
+}
+ 
+.span-box {
+  width: 960px;
+  display:flex;
+  justify-content: center;
+  font-weight: bold;
 }
 .span-box span {
+  width: 300px;
+  text-align: center;
   display:inline-block;
   margin-right: 30px;
   color: deeppink;
-  
-  
+    
 }
 button {
   border-radius: 10px;
@@ -82,16 +100,26 @@ button {
 ::placeholder {
   color: gray;
 }
+.url {
+  text-decoration: none;
+
+}
+.tag {
+    border-radius: 10px;
+    width:98%;
+    margin:auto;
+}
     </style>
   </head>
   <body>
+    <div class="firstcontainer">
     <section class="header">
       <h1>TO DO LIST</h1>
-      <input id="input" placeholder="Todo" />
+      <input id="input1" placeholder="제목(20자내로 쓰세요)"/>
+      <input id="input" placeholder="할일(200자내로 쓰세요)" />
+         <input id="inputUrl" placeholder="URL"/>
       <button>Click</button=>
-         
-        
-      <!-- <button onclick="callback()">Click</button> -->
+        <!-- <button onclick="callback()">Click</button> -->
     </section>
     <div class="span-box">
       <span>TO DO</span>
@@ -99,84 +127,12 @@ button {
       <span>DONE</span>
     </div> 
     <section class="container">
-  
-            <div class="box todo" category="todo"></div>
+      <div class="box todo" category="todo"></div>
       <div class="box doing" category="doing"></div>
       <div class="box done" category="done"></div>
     </section>
-    <script src="todo.js"></script>
-    <!-- <script>
-      let todos = JSON.parse(localStorage.getItem("todos"));
-      if (todos != null) {
-        display(todos, document.querySelector(".box1"));
-      } else {
-        todos = [];
-      }
-
-      function callback() {
-        if (document.querySelector("#input").value.length === 0) {
-          alert("할일을 입력해주세요");
-          return;
-        }
-        todos.push(document.querySelector("#input").value);
-        localStorage.setItem("todos", JSON.stringify(todos));
-        display(todos, document.querySelector(".box1"));
-        document.querySelector("#input").value = "";
-      }
-      function display(x, y) {
-        y.innerHTML = "";
-        x.forEach((a) => {
-          const 할일 = document.createElement("p");
-          할일.textContent = a;
-          const random = colors[Math.floor(Math.random() * (18 - 1)) + 1];
-          console.log(random);
-          할일.style.backgroundColor = random;
-          y.appendChild(할일);
-        });
-      }
-
-      const boxes = document.querySelectorAll(".box");
-      const 드래그할일 = document.querySelector(".할일인데어떠카지?");
-
-      boxes.forEach(function (box) {
-        box.addEventListener("dragover", (e) => {
-          e.preventDefault();
-        });
-      });
-      box.addEventListener("dragleave", (e) => {});
-      box.addEventListener("drop", (e) => {
-        e.current
-      })
-    </script> -->
+    </div>
+    <script src="투두완성본.js"></script>
   </body>
-</html>
-
-<!-- <input id="input" placeholder="todo list" />
-    <button onclick="callback()">click</button>
-    <p class="display"></p>
-    <script>
-      let todos = JSON.parse(localStorage.getItem("todos"));
-      if (todos != null) {
-        display(todos, document.querySelector(".display"));
-      } else {
-        todos = [];
-      }
-      function callback() {
-        if (document.querySelector("#input").value.length === 0) {
-          alert("할일을 입력해주세요");
-          return;
-        }
-        todos.push(document.querySelector("#input").value);
-        localStorage.setItem("todos", JSON.stringify(todos));
-        display(todos, document.querySelector(".display"));
-        document.querySelector("#input").value = "";
-      }
-      function display(array, parent) {
-        parent.innerHTML = "";
-        array.forEach((a) => {
-          const newTag = document.createElement("p");
-          newTag.textContent = a;
-          parent.appendChild(newTag);
-        });
-      }
-    </script>  -->
+  </html>
+  
